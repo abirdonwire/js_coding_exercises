@@ -22,11 +22,14 @@ function getBusNumbers(people) {
 function countSheep(arr) {
   if (arr === undefined) throw new Error("arr is required");
   // Your code here!
+  return arr.filter(x => x === "sheep").length;
 }
 
 function hasMPostCode(person) {
   if (person === undefined) throw new Error("person is required");
   // Your code here!
+  let pCode = person.address.postCode;
+  return pCode.charAt(0) == 'M' && Number.isInteger(parseInt(pCode.charAt(1))) ? true : false;
 }
 
 module.exports = {
