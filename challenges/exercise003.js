@@ -24,6 +24,11 @@ function camelCaseWords(words) {
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
   // Your code here!
+  let result = people.map(function(person){
+    return person.subjects
+  }).filter(subject => subject.length !== 0).flat().length;
+  
+  return result;
 }
 
 function checkIngredients(menu, ingredient) {
