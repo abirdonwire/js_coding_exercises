@@ -8,7 +8,7 @@ function capitalize(word) {
   }
 }
 
-(capitalize('hello'));
+capitalize('hello');
 
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
@@ -22,7 +22,7 @@ function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   // Add your code here!
-  return (originalPrice/100)*(vatRate+100);
+  return Number((originalPrice/100)*(vatRate+100)).toFixed(2);
 }
 
 function getSalePrice(originalPrice, reduction) {
