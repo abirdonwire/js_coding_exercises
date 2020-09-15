@@ -7,16 +7,15 @@ function capitalize(word) {
   }
 }
 
-capitalize("hello");
-
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
   let fullName = `${firstName} ${lastName}`;
-  return fullName
+  let initials = fullName
     .split(" ")
     .map((n) => n[0])
     .join(".");
+  return initials;
 }
 
 function addVAT(originalPrice, vatRate) {
