@@ -75,30 +75,11 @@ describe("getTotalSubjects", () => {
 
 describe("checkIngredients", () => {
   test("returns false if no menu items include the specified ingredient", () => {
-    const menu = [
-      {
-        name: "tofu fritters",
-        ingredients: ["tofu", "egg yolk", "breadbrumbs", "paprika"]
-      },
-      {
-        name: "black bean curry",
-        ingredients: ["black beans", "garam masala", "rice"]
-      },
-      {
-        name: "chocolate tiffin",
-        ingredients: [
-          "dark chocolate",
-          "egg",
-          "flour",
-          "brown sugar",
-          "vanilla essence"
-        ]
-      },
-      {
-        name: "hummus",
-        ingredients: ["chickpeas", "tahini", "lemon", "garlic", "salt"]
-      }
-    ];
+    const menu = function checkIngredients(menu, ingredient) {
+  if (menu === undefined) throw new Error("menu is required");
+  if (!ingredient) throw new Error("ingredient is required");
+  
+};
 
     expect(checkIngredients(menu, "milk")).toBe(false);
   });

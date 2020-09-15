@@ -56,7 +56,6 @@ function reverseAllWords(words) {
 
 function countLinuxUsers(users) {
   if (users === undefined) throw new Error("users is required");
-  // Add your code here!
   let result = users.filter(function (user) {
     return user.type == "Linux";
   });
@@ -65,16 +64,15 @@ function countLinuxUsers(users) {
 
 function getMeanScore(scores) {
   if (scores === undefined) throw new Error("scores is required");
-  let result = parseFloat(
+  return parseFloat(
     (scores.reduce((a, b) => a + b) / scores.length).toFixed(2)
   );
-  return result;
+  
   // Still failing tests, I just don't understand why. I debugged using typeof and it's returning a number not a string.
 }
 
 function simpleFizzBuzz(n) {
   if (n === undefined) throw new Error("n is required");
-  // Add your code here!
   if (n % 3 == 0 && n % 5 == 0) {
     return "fizzbuzz";
   } else if (n % 3 == 0) {
