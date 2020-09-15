@@ -1,9 +1,11 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  if (word[0] === word[0].toUpperCase()) {
-    return word;
+  let capWord = word;
+  if (capWord[0] === capWord[0].toUpperCase()) {
+    return capWord;
   } else {
-    return word.charAt(0).toUpperCase() + word.slice(1);
+    let result = capWord.charAt(0).toUpperCase() + capWord.slice(1);
+    return result;
   }
 }
 
@@ -21,13 +23,13 @@ function addVAT(originalPrice, vatRate) {
   if (vatRate === undefined) throw new Error("vatRate is required");
   let result = parseFloat(((originalPrice / 100) * (vatRate + 100)).toFixed(2));
   return result;
-}// Returns a number, not a string. Still fails.
+} // Returns a number, not a string. Still fails.
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  // Add your code here!
-  return originalPrice - originalPrice * (reduction / 100);
+  let result = originalPrice - originalPrice * (reduction / 100);
+  return result;
 }
 
 function getMiddleCharacter(str) {
