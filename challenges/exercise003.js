@@ -47,7 +47,8 @@ function checkIngredients(menu, ingredient) {
 function duplicateNumbers(arr1, arr2) {
   if (arr1 === undefined) throw new Error("arr1 is required");
   if (arr2 === undefined) throw new Error("arr2 is required");
-  // Your code here!
+  let newArr = arr1.concat(arr2);
+  return newArr.filter((item, index) => newArr.indexOf(item) != index).sort();
 }
 
 module.exports = {
