@@ -32,7 +32,8 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  // Your code here
+  let regex = /[str]/gi;
+  return sentences.filter(sentence => sentence.match(regex));
 }
 
 function getLongestSides(triangles) {
