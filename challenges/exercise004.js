@@ -33,12 +33,16 @@ function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
   let regex = /[str]/gi;
-  return sentences.filter(sentence => sentence.match(regex));
+  return sentences.filter((sentence) => sentence.match(regex));
 }
 
 function getLongestSides(triangles) {
   if (!triangles) throw new Error("triangles is required");
-  // Your code here
+  return triangles.map(function (triangleItem) {
+    return triangleItem.reduce(function (a, b) {
+      return a > b ? a : b;
+    });
+  });
 }
 
 module.exports = {
