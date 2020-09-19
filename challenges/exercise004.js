@@ -34,6 +34,7 @@ function findSentencesContaining(sentences, str) {
   if (!str) throw new Error("str is required");
   let regex = /[str]/gi;
   return sentences.filter((sentence) => sentence.match(regex));
+  // not got this yet, Regex not my fave
 }
 
 function getLongestSides(triangles) {
