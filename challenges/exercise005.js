@@ -50,7 +50,10 @@ const arrShift = (arr) => {
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  // Your code here!
+  
+  let valuesArr = Object.values(obj1);
+  
+  let stringArr = valuesArr.filter(val => typeof val === "string" || val instanceof String);
 };
 
 const getWordFrequencies = (str) => {
