@@ -8,13 +8,24 @@ const findNextNumber = (nums, n) => {
     return nextItem;
   } else {
     return null;
-  
   }
 };
 
 const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  // Your code here!
+  var numberObj = {
+    1: 0,
+    0: 0,
+  };
+
+  let arr = str.split("");
+  let zeros = arr.filter((x) => x === "0").length;
+  let ones = arr.filter((x) => x === "1").length;
+
+  numberObj["1"] = ones;
+  numberObj["0"] = zeros;
+
+  return numberObj;
 };
 
 const reverseNumber = (n) => {
