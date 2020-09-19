@@ -30,7 +30,7 @@ const count1sand0s = (str) => {
 
 const reverseNumber = (n) => {
   if (n === undefined) throw new Error("n is required");
-  // Your code here!
+  return Number(Array.from(n.toString()).reverse().join(""));
 };
 
 const sumArrays = (arrs) => {
