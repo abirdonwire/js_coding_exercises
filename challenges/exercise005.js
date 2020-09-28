@@ -40,20 +40,26 @@ const sumArrays = (arrs) => {
 
 const arrShift = (arr) => {
   if (arr === undefined) throw new Error("arr is required");
-  let firstVal = arr.shift();
-  let lastVal = arr.pop();
-  arr.unshift(lastVal);
-  arr.push(firstVal);
-  return arr;
+  if (arr.length >= 2) {
+    let firstVal = arr.shift();
+    let lastVal = arr.pop();
+    arr.unshift(lastVal);
+    arr.push(firstVal);
+    return arr;
+  } else {
+    return arr;
+  }
 };
 
 const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
-  
+
   let valuesArr = Object.values(obj1);
-  
-  let stringArr = valuesArr.filter(val => typeof val === "string" || val instanceof String);
+
+  let stringArr = valuesArr.filter(
+    (val) => typeof val === "string" || val instanceof String
+  );
 };
 
 const getWordFrequencies = (str) => {
