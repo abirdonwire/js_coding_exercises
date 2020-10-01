@@ -57,8 +57,9 @@ for (let i of str) {
 return dna;
 };
 
-/**
- * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
+
+ /**
+  *This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
  * @param {Number} n
  * @returns {Boolean}
  */
@@ -80,6 +81,19 @@ const isItPrime = n => {
 const createMatrix = (n, fill) => {
   if (n === undefined) throw new Error("n is required");
   if (fill === undefined) throw new Error("fill is required");
+  if (typeof n !== 'number') throw new Error("a number is required");
+  if (Math.sign(n) === -1 || Math.sign(n) === 0 || n % 1 !== 0) throw new Error("n must be a positive integer");
+  
+  const matrix = [];
+  
+  for (let i = 0; i < n; i++) {
+    const arr = [];
+    for (let j = 0; j < n; j++) {
+      arr.push(fill);
+    }
+    matrix.push(arr);
+  }
+  return matrix;
 };
 
 /**
