@@ -1,5 +1,6 @@
 const findNextNumber = (nums, n) => {
   if (nums === undefined) throw new Error("nums is required");
+  if (n === undefined) throw new Error("n is required");
   let index = nums.indexOf(n);
   if (index >= 0 && index < nums.length - 1) {
     let nextItem = nums[index + 1];
