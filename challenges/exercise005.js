@@ -54,11 +54,14 @@ const findNeedle = (haystack, searchTerm) => {
   if (haystack === undefined) throw new Error("haystack is required");
   if (searchTerm === undefined) throw new Error("searchTerm is required");
 
-  let valuesArr = Object.values(obj1);
-
-  let stringArr = valuesArr.filter(
-    (val) => typeof val === "string" || val instanceof String
-  );
+  for (let key in haystack) {
+    const values = `${haystack[key]}`;
+    const lowerCaseValues = values.toLowerCase();
+    if (lowerCaseValues.includes(searchTerm.toLowerCase())) {
+      return true;
+    }
+  }
+  return false;
 };
 
 const getWordFrequencies = (str) => {
