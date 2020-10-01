@@ -1,12 +1,6 @@
 function capitalize(word) {
   if (word === undefined) throw new Error("word is required");
-  let capWord = word;
-  if (capWord[0] === capWord[0].toUpperCase()) {
-    return capWord;
-  } else {
-    let result = capWord.charAt(0).toUpperCase() + capWord.slice(1);
-    return result;
-  }
+  return word.substring(0, 1).toUpperCase() + word.substring(1, word.length);
 }
 
 function generateInitials(firstName, lastName) {
@@ -44,13 +38,11 @@ function getMiddleCharacter(str) {
 
 function reverseWord(word) {
   if (word === undefined) throw new Error("word is required");
-  // Add your code here!
   return word.split("").reverse().join("");
 }
 
 function reverseAllWords(words) {
   if (words === undefined) throw new Error("words is required");
-  // Add your code here!
   return words.map((word) => word.split("").reverse().join(""));
 }
 
