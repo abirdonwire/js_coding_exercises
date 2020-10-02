@@ -6,10 +6,7 @@ function capitalize(word) {
 function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
-  let firstInitial = firstName.split("").shift();
-  let lastInitial = lastName.split("").shift();
-  let initials = `${firstInitial}.${lastInitial}`;
-  return initials;
+  return firstName.substring(0, 1) + "." + lastName.substring(0, 1);
 } // Still failing but generates string "F.B", tried a different approach but still failing
 
 function addVAT(originalPrice, vatRate) {
