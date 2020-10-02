@@ -7,14 +7,13 @@ function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
   return firstName.substring(0, 1) + "." + lastName.substring(0, 1);
-} // Still failing but generates string "F.B", tried a different approach but still failing
+} 
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
-  let result = parseFloat(((originalPrice / 100) * (vatRate + 100)).toFixed(2));
-  return result;
-} // Returns a number, not a string. Still fails.
+  return Math.round(originalPrice * (100 + vatRate)) / 100;
+} 
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
@@ -57,7 +56,7 @@ function getMeanScore(scores) {
     (scores.reduce((a, b) => a + b) / scores.length).toFixed(2)
   );
   
-  // Still failing tests, I just don't understand why. I debugged using typeof and it's returning a number not a string.
+  
 }
 
 function simpleFizzBuzz(n) {
