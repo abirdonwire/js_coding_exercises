@@ -37,7 +37,8 @@ const createRange = (start, end, step) => {
 };
 
 /**
- * This function takes an array of user objects and their usage in minutes of various applications. The format of the data should be as follows:
+ * This function takes an array of user objects and their usage in minutes of various applications.
+ *  The format of the data should be as follows:
  * [
  *  {
  *    username: "beth_1234",
@@ -68,6 +69,33 @@ const createRange = (start, end, step) => {
 const getScreentimeAlertList = (users, date) => {
   if (users === undefined) throw new Error("users is required");
   if (date === undefined) throw new Error("date is required");
+
+  const userArr = [];
+  //the array of users to be returned
+  let position = 0;
+  // position in array index
+
+  users.forEach((user) => {
+    //for each user, create a usage variable which stores the screenTime property as an array.
+    let usage = user.screenTime;
+    usage.forEach((input) => {
+      //for each input object, check if the date parameter matches the date that is stored.
+      if (input.date === date) {
+        let totalTime = 0; //if it does match the date, create a variable to store the time online
+        for (let prop in input.usage) {
+          //for in loop loops through the usage prop and adds the time stored into the totalTime variable
+          totalTime += input.usage[prop];
+        }
+        if (totalTime > 100) {
+          //checks if the total time is greater than 100
+          userArr[position] = user.username; // if true, add the username of the user to the array of users who need a screentime alert
+          position += 1;
+        }
+      }
+    });
+  });
+
+  return userArr; // returns the array
 };
 
 /**

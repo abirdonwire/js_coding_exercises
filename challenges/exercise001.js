@@ -7,13 +7,13 @@ function generateInitials(firstName, lastName) {
   if (firstName === undefined) throw new Error("firstName is required");
   if (lastName === undefined) throw new Error("lastName is required");
   return firstName.substring(0, 1) + "." + lastName.substring(0, 1);
-} 
+}
 
 function addVAT(originalPrice, vatRate) {
   if (originalPrice === undefined) throw new Error("originalPrice is requied");
   if (vatRate === undefined) throw new Error("vatRate is required");
   return Math.round(originalPrice * (100 + vatRate)) / 100;
-} 
+}
 
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
@@ -24,7 +24,6 @@ function getSalePrice(originalPrice, reduction) {
 
 function getMiddleCharacter(str) {
   if (str === undefined) throw new Error("str is required");
-  // Add your code here!
   if (str.length % 2 === 0) {
     return str[str.length / 2 - 1] + str[str.length / 2];
   } else {
@@ -55,8 +54,6 @@ function getMeanScore(scores) {
   return parseFloat(
     (scores.reduce((a, b) => a + b) / scores.length).toFixed(2)
   );
-  
-  
 }
 
 function simpleFizzBuzz(n) {
