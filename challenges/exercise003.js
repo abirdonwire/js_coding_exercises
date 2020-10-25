@@ -1,6 +1,5 @@
 function getSquares(nums) {
   if (nums === undefined) throw new Error("nums is required");
-
   if (nums !== undefined) {
     return nums.map((x) => Math.pow(x, 2));
   }
@@ -24,7 +23,6 @@ function camelCaseWords(words) {
 
 function getTotalSubjects(people) {
   if (people === undefined) throw new Error("people is required");
-
   let result = people
     .map(function (person) {
       return person.subjects;
