@@ -110,7 +110,22 @@ const getScreentimeAlertList = (users, date) => {
  */
 const hexToRGB = (hexStr) => {
   if (hexStr === undefined) throw new Error("hexStr is required");
+  if (typeof hexStr !== 'string') throw new Error("hexStr must be a string");
+  const regexp = new RegExp('^#[0-9A-Fa-f]{6}$');
+  if (regexp.test(hexStr) === false) {
+    throw new Error("a valid hex color code is required");
+  }
+
+  let r = 0, g = 0, b = 0;
+
+  if (hexStr.length == 7) {
+    r = "0x" + hexStr[1] + hexStr[2];
+    g = "0x" + hexStr[3] + hexStr[4];
+    b = "0x" + hexStr[5] + hexStr[6];
+  }
+  return "rgb(" + +r + "," + +g + "," + +b + ")";
 };
+
 
 /**
  * This function takes a noughts and crosses board represented as an array, where an empty space is represented with null.
@@ -124,6 +139,34 @@ const hexToRGB = (hexStr) => {
  */
 const findWinner = (board) => {
   if (board === undefined) throw new Error("board is required");
+  const win = null;
+
+  if (board[0][0] === board[0][1] && board[0][2] === board[0][1]) {
+    return board[0][0];
+  }
+  else if (board[1][0] === board[1][1] && board[1][2] === board[1][1]) {
+    return board[1][0];
+  }
+  else if (board[2][0] === board[2][1] && board[2][2] === board[2][1]) {
+    return board[2][0];
+  }
+  else if (board[0][0] === board[1][0] && board[1][0] === board[2][0]) {
+    return board[0][0];
+  }
+  else if (board[0][1] === board[1][1] && board[2][1] === board[1][1]) {
+    return board[0][1];
+  }
+  else if (board[0][2] === board[1][2] && board[2][2] === board[0][2]) {
+    return board[0][2];
+  }
+  else if (board[0][0] === board[1][1] && board[2][2] === board[1][1]) {
+    return board[0][0];
+  }
+  else if (board[0][2] === board[1][1] && board[2][0] === board[0][2]) {
+    return board[0][2];
+  }
+
+  return (win);
 };
 
 module.exports = {
