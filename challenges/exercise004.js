@@ -32,12 +32,12 @@ function getSquareRoots(nums) {
 function findSentencesContaining(sentences, str) {
   if (!sentences) throw new Error("sentences is required");
   if (!str) throw new Error("str is required");
-  const matchingSentences = [];
-   sentences.forEach(function (item) {
-     if (item.toLowerCase().includes(str.toLowerCase())) {
-       matchingSentences.push(item);
-     }
-   })
+  const matchingSentences = sentences.filter(function (item) {
+    if (item.toLowerCase().includes(str.toLowerCase())) {
+      return item;
+    }
+  });
+  return matchingSentences;
 }
 
 function getLongestSides(triangles) {
