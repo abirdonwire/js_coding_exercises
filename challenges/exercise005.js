@@ -12,7 +12,7 @@ const findNextNumber = (nums, n) => {
 
 const count1sand0s = (str) => {
   if (str === undefined) throw new Error("str is required");
-  var numberObj = {
+  const numberObj = {
     1: 0,
     0: 0,
   };
