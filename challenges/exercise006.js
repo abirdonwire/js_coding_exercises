@@ -57,15 +57,30 @@ for (let i of str) {
 return dna;
 };
 
+/**
+ * This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
+ * @param {Number} n
+ * @returns {Boolean}
+ */
 
- 
-//This function should receive a number and return true/false depending on whether it is a prime number or not. A prime number is a number that can only be divided evenly by 1 and itself (for example, 7)
-// @param {Number} n
-// @returns {Boolean}
- 
 const isItPrime = n => {
   if (n === undefined) throw new Error("n is required");
+  if (typeof n !== 'number') throw new Error("a number is required");
+
+  
+  if (n < 2) { return false }
+  if (n != Math.round(n)) { return false }
+
+ 
+  let isPrime = true;
+
+  
+  for (let i = 2; i <= Math.sqrt(n); i++) {
+    if (n % i == 0) { isPrime = false }
+  }
+  return isPrime;
 };
+ 
 
 /**
  * This function should receive a number and return an array of n arrays, each filled with n items. The parameter "fill" should be used as the filler of the arrays. For example, given parameters 3 and "foo" the resulting matrix should be:
