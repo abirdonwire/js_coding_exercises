@@ -108,9 +108,9 @@ const getScreentimeAlertList = (users, date) => {
  * Hint: You will need to convert each hexadecimal value for R, G and B into its decimal equivalent!
  * @param {String} str
  */
-const hexToRGB = (hexStr) => {
-  if (hexStr === undefined) throw new Error("hexStr is required");
-};
+  const hexToRGB = (hexStr) => {
+    if (hexStr === undefined) throw new Error("hexStr is required");
+  };
 
 /**
  * This function takes a noughts and crosses board represented as an array, where an empty space is represented with null.

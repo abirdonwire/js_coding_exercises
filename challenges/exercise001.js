@@ -18,8 +18,7 @@ function addVAT(originalPrice, vatRate) {
 function getSalePrice(originalPrice, reduction) {
   if (originalPrice === undefined) throw new Error("originalPrice is required");
   if (reduction === undefined) throw new Error("reduction is required");
-  let result = originalPrice - originalPrice * (reduction / 100);
-  return result;
+  return originalPrice - originalPrice * (reduction / 100);
 }
 
 function getMiddleCharacter(str) {
